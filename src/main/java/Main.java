@@ -1,7 +1,6 @@
-package com.company;
+import first_draft.Args;
 
-import com.objectmentor.utilities.args.Args;
-import com.objectmentor.utilities.args.ArgsException;
+import java.text.ParseException;
 
 public class Main {
 
@@ -14,8 +13,8 @@ public class Main {
             System.out.println("logging: " + logging);
             System.out.println("port: " + port);
             System.out.println("directory: " + directory);
-        } catch (ArgsException e) {
-            System.out.printf("Argument error: %s\n", e.errorMessage());
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 }

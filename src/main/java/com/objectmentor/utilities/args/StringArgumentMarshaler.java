@@ -3,8 +3,6 @@ package com.objectmentor.utilities.args;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import static com.objectmentor.utilities.args.ArgsException.ErrorCode.*;
-
 public class StringArgumentMarshaler implements ArgumentMarshaler {
     private String stringValue = "";
 
@@ -12,7 +10,7 @@ public class StringArgumentMarshaler implements ArgumentMarshaler {
         try {
             stringValue = currentArgument.next();
         } catch (NoSuchElementException e) {
-            throw new ArgsException(MISSING_STRING);
+            throw new ArgsException(ArgsException.ErrorCode.MISSING_STRING);
         }
     }
 

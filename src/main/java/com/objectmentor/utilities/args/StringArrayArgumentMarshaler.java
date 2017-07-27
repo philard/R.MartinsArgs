@@ -3,9 +3,6 @@ package com.objectmentor.utilities.args;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import static com.objectmentor.utilities.args.ArgsException.ErrorCode.INVALID_DOUBLE;
-import static com.objectmentor.utilities.args.ArgsException.ErrorCode.MISSING_INTEGER;
-
 public class StringArrayArgumentMarshaler implements ArgumentMarshaler {
     private String[] stringArrayValue = new String[] {};
 
@@ -16,9 +13,9 @@ public class StringArrayArgumentMarshaler implements ArgumentMarshaler {
             parameter = currentArgument.next();
             stringArrayValue = parameter.split("\\s");
         } catch (NoSuchElementException e) {
-            throw new ArgsException(MISSING_INTEGER);
+            throw new ArgsException(ArgsException.ErrorCode.MISSING_INTEGER);
         } catch (NumberFormatException e) {
-            throw new ArgsException(INVALID_DOUBLE);
+            throw new ArgsException(ArgsException.ErrorCode.INVALID_DOUBLE);
         }
     }
 

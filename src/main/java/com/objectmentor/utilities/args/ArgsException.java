@@ -1,6 +1,6 @@
 package com.objectmentor.utilities.args;
 
-import static com.objectmentor.utilities.args.ArgsException.ErrorCode.*;
+import static main.com.java.args.ArgsException.ErrorCode.*;
 
 public class ArgsException extends Exception {
     private char errorArgumentId = '\0';
